@@ -4,215 +4,248 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSSE TRI 1 Guide</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background-color: #1f1f1f; /* dark gray */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, #1c1c1c, #2a2a2a);
       color: #fff;
-      line-height: 1.6;
-      overflow-x: hidden;
     }
 
-    /* Glassmorphism effect */
-    .glass {
-      background: rgba(255, 255, 255, 0.07);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 20px;
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
-    }
-
-    /* Hero Section */
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .hero-bubble {
-      padding: 40px;
-      max-width: 800px;
-    }
-
-    .hero h1 {
-      font-size: 2.8rem;
-      font-weight: 700;
-      color: #fff;
-      text-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      color: #e0e0e0;
-      font-weight: 500;
-    }
-
-    /* Warning Bubble */
-    .warning {
-      margin: 40px auto;
-      padding: 15px 25px;
-      background: rgba(255, 255, 0, 0.08);
-      border: 1px solid rgba(255, 255, 0, 0.4);
-      border-radius: 12px;
+    .bubble {
+      background: rgba(40, 40, 40, 0.85);
+      padding: 25px;
+      border-radius: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      max-width: 700px;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
       text-align: center;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
     }
 
-    .warning span {
-      color: #ffea00;
-      font-size: 1rem;
+    p {
+      font-size: 1.05rem;
+      font-weight: 500;
+      text-align: center;
+      color: #ddd;
+    }
+
+    .warning {
+      background: rgba(255, 255, 0, 0.1);
+      color: #ffe066;
+      border-left: 5px solid #ffe066;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      margin-bottom: 30px;
       font-weight: 600;
     }
 
-    .warning button {
-      background: rgba(255, 255, 0, 0.15);
-      border: 1px solid #ffea00;
-      color: #ffea00;
-      font-weight: 600;
-      padding: 8px 14px;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
+    .warning a {
+      color: #fff;
+      font-weight: bold;
+      margin-left: 8px;
+      text-decoration: underline;
     }
 
-    .warning button:hover {
-      background: #ffea00;
-      color: #000;
-    }
-
-    /* Search bar */
     .search-container {
-      margin: 40px auto 20px;
-      max-width: 600px;
-      display: flex;
-      justify-content: center;
+      text-align: center;
+      margin-bottom: 30px;
     }
 
     .search-container input {
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 20px;
+      width: 70%;
+      padding: 14px 18px;
+      border-radius: 12px;
       border: none;
       outline: none;
-      font-size: 1rem;
-      font-weight: 500;
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      font-size: 16px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
     }
 
-    /* Activity Boxes */
     .activities {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-      padding: 20px;
-      max-width: 1200px;
-      margin: auto;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 25px;
     }
 
     .activity {
-      padding: 15px;
-      text-align: center;
-      transition: 0.3s;
-      cursor: pointer;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 16px;
+      padding: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.1);
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .activity:hover {
       transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
     }
 
-    .activity img {
-      width: 100%;
-      max-height: 120px;
-      object-fit: cover;
-      border-radius: 8px;
+    .step-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      font-weight: bold;
+      color: #eee;
       margin-bottom: 10px;
     }
 
-    .activity p {
-      color: #f1f1f1;
-      font-size: 1rem;
+    .step-number {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 3px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+    }
+
+    .activity-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .activity-title a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .activity-title a:hover {
+      text-decoration: underline;
+    }
+
+    .activity-desc {
+      font-size: 15px;
+      line-height: 1.5;
       font-weight: 500;
+      color: #ddd;
+    }
+
+    .tags-toggle {
+      cursor: pointer;
+      font-size: 14px;
+      color: #bbb;
+      user-select: none;
+    }
+
+    .tags {
+      display: none;
+      margin-top: 8px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .tags span {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 4px 10px;
+      margin: 3px;
+      border-radius: 8px;
+      font-size: 13px;
     }
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-bubble glass">
-      <h1>Your Guide to CSSE TRI 1 is here</h1>
-      <p>Yes, we all have had problems understanding the class but don’t worry, 
-         because we have step-by-step video and photo guides on every setup tool 
-         and process they did in class, before you make this very exact project.</p>
-    </div>
-  </section>
+  <!-- Title -->
+  <div class="bubble">
+    <h1>Your Guide to CSSE TRI 1 is here</h1>
+    <p>Yes, we all have had problems understanding the class, but don’t worry — we have step-by-step video and photo guides on every setup tool and process done in class, before you make this very exact project.</p>
+  </div>
 
   <!-- Warning -->
   <div class="warning">
-    <span>This only starts AFTER you have installed WSL, Ubuntu, and VS Code</span>
-    <button onclick="alert('Setup guide coming soon!')">Click Here to Get Setup</button>
+    ⚠️ This only starts after you have installed WSL, Ubuntu, and VSCode.
+    <a href="#">Click here to get the setup</a>
   </div>
 
   <!-- Search -->
   <div class="search-container">
-    <input type="text" placeholder="Search for an activity...">
+    <input type="text" id="search" placeholder="Search activities by title, description, or tags...">
   </div>
 
   <!-- Activities -->
   <div class="activities">
-    <div class="activity glass">
-      <img src="https://via.placeholder.com/200x120" alt="Activity 1">
-      <p>Activity 1 – Setting up Git and GitHub</p>
+    <div class="activity" data-title="Learn HTML Basics" data-desc="Start with simple HTML structure." data-tags="html,web,beginner">
+      <div class="step-bar">
+        <span>Step</span> <span class="step-number"></span>
+      </div>
+      <div class="activity-title"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">Learn HTML Basics</a></div>
+      <div class="activity-desc">Start with simple HTML structure.</div>
+      <div class="tags-toggle">Show Tags ▾</div>
+      <div class="tags"><span>html</span><span>web</span><span>beginner</span></div>
     </div>
-    <div class="activity glass">
-      <img src="https://via.placeholder.com/200x120" alt="Activity 2">
-      <p>Activity 2 – Installing Required Extensions</p>
+
+    <div class="activity" data-title="Style with CSS" data-desc="Make your website beautiful." data-tags="css,design,frontend">
+      <div class="step-bar">
+        <span>Step</span> <span class="step-number"></span>
+      </div>
+      <div class="activity-title"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">Style with CSS</a></div>
+      <div class="activity-desc">Make your website beautiful.</div>
+      <div class="tags-toggle">Show Tags ▾</div>
+      <div class="tags"><span>css</span><span>design</span><span>frontend</span></div>
     </div>
-    <div class="activity glass">
-      <img src="https://via.placeholder.com/200x120" alt="Activity 3">
-      <p>Activity 3 – Hello World with C++</p>
-    </div>
-    <div class="activity glass">
-      <img src="https://via.placeholder.com/200x120" alt="Activity 4">
-      <p>Activity 4 – Compiling & Running Programs</p>
+
+    <div class="activity" data-title="JavaScript Basics" data-desc="Add interactivity to your site." data-tags="javascript,frontend,coding">
+      <div class="step-bar">
+        <span>Step</span> <span class="step-number"></span>
+      </div>
+      <div class="activity-title"><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript Basics</a></div>
+      <div class="activity-desc">Add interactivity to your site.</div>
+      <div class="tags-toggle">Show Tags ▾</div>
+      <div class="tags"><span>javascript</span><span>frontend</span><span>coding</span></div>
     </div>
   </div>
 
   <script>
-    // Search filter
-    const searchInput = document.querySelector('.search-container input');
-    searchInput.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase();
-      document.querySelectorAll('.activity').forEach(box => {
-        const text = box.innerText.toLowerCase();
-        box.style.display = text.includes(query) ? 'block' : 'none';
+    // Auto-number steps
+    document.querySelectorAll(".step-number").forEach((el, idx) => {
+      el.textContent = idx + 1;
+    });
+
+    // Search function (includes title, desc, tags)
+    document.getElementById("search").addEventListener("input", function () {
+      let query = this.value.toLowerCase();
+      let activities = document.querySelectorAll(".activity");
+
+      activities.forEach(activity => {
+        let title = activity.dataset.title.toLowerCase();
+        let desc = activity.dataset.desc.toLowerCase();
+        let tags = activity.dataset.tags.toLowerCase();
+
+        if (title.includes(query) || desc.includes(query) || tags.includes(query)) {
+          activity.style.display = "flex";
+        } else {
+          activity.style.display = "none";
+        }
+      });
+    });
+
+    // Toggle tags visibility
+    document.querySelectorAll(".tags-toggle").forEach(toggle => {
+      toggle.addEventListener("click", function () {
+        let tags = this.nextElementSibling;
+        if (tags.style.display === "block") {
+          tags.style.display = "none";
+          this.textContent = "Show Tags ▾";
+        } else {
+          tags.style.display = "block";
+          this.textContent = "Hide Tags ▴";
+        }
       });
     });
   </script>
 </body>
 </html>
-
